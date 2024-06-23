@@ -1,0 +1,11 @@
+* {
+  font-family: inconsolata;
+}
+
+body {
+  min-height: 2000px;
+}
+
+.container-fluid.home {
+  padding: 100px 0px;
+}
