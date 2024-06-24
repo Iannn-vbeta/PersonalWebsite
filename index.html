@@ -139,20 +139,28 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 mb-5">
+              <!-- Alert -->
+              <div class="alert alert-success d-none" role="alert">
+                <h4 class="alert-heading text-center">Makasiii (づ^ω^づ)</h4>
+                <p>Mwehehehe, Terima kasih sudah mengirim pesan, semoga hari kalian menyenangkan</p>
+                <hr />
+                <p class="mb-0">Bisa hubungi aku lagi jika kalian senggang.</p>
+              </div>
+              <!--  -->
               <form action="" method="post" name="Kotak Masuk">
                 <div class="mb-3">
-                  <label for="name" class="form-label">Nama</label>
-                  <input type="text" class="form-control" id="name" name="nama" required />
+                  <label for="name" class="form-labeld">Nama</label>
+                  <input type="text" class="form-control" id="name" name="nama" autocomplete="off" required />
                 </div>
-                <!-- <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" />
-                </div> -->
                 <div class="mb-3">
                   <label for="message" class="form-label">Pesan</label>
-                  <textarea class="form-control" id="message" name="pesan" rows="3" required></textarea>
+                  <textarea class="form-control" id="message" name="pesan" rows="3" autocomplete="off" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Kirim</button>
+                <button type="submit" class="btn btn-success btn-kirim">Kirim</button>
+                <button class="btn d-none btn-loading" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Loading...
+                </button>
               </form>
             </div>
             <div class="col-md-4 text-center">
@@ -191,16 +199,6 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- Js -->
-    <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbz5yiohaRJrgCVGMcOrlbLy4h57v7U6AQsiGFNFCHU5OPytWRDsIHGzQCTmVrCr_cQ/exec";
-      const form = document.forms["Kotak Masuk"];
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => console.log("Success!", response))
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
