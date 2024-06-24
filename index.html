@@ -108,7 +108,7 @@
                 <img src="resource/css-removebg-preview.png" alt="" width="100" class="img-fluid" />
               </div>
               <div class="col">
-                <img src="resource/js-removebg-preview.png" alt="" width="100" class="img-fluid" />
+                <img src="resource/Js-removebg-preview.png" alt="js" width="100" class="img-fluid" />
               </div>
               <div class="col">
                 <img src="resource/py-removebg-preview.png" alt="" width="100" class="img-fluid" />
@@ -191,6 +191,16 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- Js -->
-    <script src="script.js"></script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbz5yiohaRJrgCVGMcOrlbLy4h57v7U6AQsiGFNFCHU5OPytWRDsIHGzQCTmVrCr_cQ/exec";
+      const form = document.forms["Kotak Masuk"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
